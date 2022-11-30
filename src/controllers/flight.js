@@ -51,11 +51,11 @@ async function createFlight(req, res) {
   const data = req.body;
   try {
     const flight = await Flight.create(data);
-    return res.status(200).json({ message: 'Flight found', data: flight });
+    return res.status(201).json({ message: 'Flight created', data: flight });
   } catch (e) {
     return res
       .status(400)
-      .json({ message: 'Flight could not been found', error: e });
+      .json({ message: 'Flight could not been created', error: e });
   }
 }
 
