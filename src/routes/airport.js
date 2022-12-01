@@ -5,11 +5,13 @@ const {
   getAirports,
   getOneAirport,
   updateAirport,
+  createMassiveAirport,
 } = require('../controllers/airport');
 
 const router = express.Router();
 
 router.post('/', createAirport);
+router.post('/massive', createMassiveAirport);
 router.get('/', getAirports);
 router.get('/:airportId', getOneAirport);
 router.put('/:airportId', updateAirport);

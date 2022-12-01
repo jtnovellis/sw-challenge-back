@@ -3,7 +3,7 @@ const { sequelize } = require('../database');
 
 const Airport = sequelize.define('airport', {
   IATA_CODE: {
-    type: DataTypes.INTEGER,
+    type: DataTypes.STRING,
     primaryKey: true,
   },
   AIRPORT: {
@@ -19,10 +19,10 @@ const Airport = sequelize.define('airport', {
     type: DataTypes.STRING,
   },
   LATITUDE: {
-    type: DataTypes.FLOAT,
+    type: DataTypes.STRING,
   },
   LONGITUDE: {
-    type: DataTypes.FLOAT,
+    type: DataTypes.STRING,
   },
 });
 

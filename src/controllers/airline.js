@@ -1,4 +1,5 @@
 const Airline = require('../models/airline');
+const { data } = require('../../dataJson/airlines');
 
 async function getAirlines(_, res) {
   try {
@@ -64,10 +65,28 @@ async function createAirline(req, res) {
   }
 }
 
+async function createMassiveAirline(req, res) {
+  try {
+    const newAirlines = [];
+    for (let i = 0; i < data.length; i++) {
+      const airline = await Airline.create(data[i]);
+      newAirlines.push(airline);
+    }
+    return res
+      .status(201)
+      .json({ message: 'Airline created', data: newAirlines });
+  } catch (e) {
+    return res
+      .status(400)
+      .json({ message: 'Airline could not been created', error: e });
+  }
+}
+
 module.exports = {
   createAirline,
   deleteAirline,
   updateAirline,
   getAirlines,
   getOneAirline,
+  createMassiveAirline,
 };

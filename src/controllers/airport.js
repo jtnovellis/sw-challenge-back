@@ -1,4 +1,5 @@
 const Airport = require('../models/airport');
+const { data } = require('../../dataJson/airports');
 
 async function getAirports(_, res) {
   try {
@@ -64,10 +65,28 @@ async function createAirport(req, res) {
   }
 }
 
+async function createMassiveAirport(_, res) {
+  try {
+    const newAirports = [];
+    for (let i = 0; i < data.length; i++) {
+      const airport = await Airport.create(data[i]);
+      newAirports.push(airport);
+    }
+    return res
+      .status(201)
+      .json({ message: 'Airports created', data: newAirports });
+  } catch (e) {
+    return res
+      .status(400)
+      .json({ message: 'Airports could not been created', error: e });
+  }
+}
+
 module.exports = {
   createAirport,
   deleteAirport,
   getAirports,
   getOneAirport,
   updateAirport,
+  createMassiveAirport,
 };
