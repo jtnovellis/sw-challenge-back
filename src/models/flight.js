@@ -1,103 +1,103 @@
 const { DataTypes } = require('sequelize');
-const { sequelize } = require('../databse');
+const { sequelize } = require('../database');
 
 const Flight = sequelize.define('flights', {
-  id: {
+  ID: {
     type: DataTypes.INTEGER,
     primaryKey: true,
     autoIncrement: true,
   },
-  year: {
+  YEAR: {
     type: DataTypes.INTEGER,
   },
-  month: {
+  MONTH: {
     type: DataTypes.INTEGER,
   },
-  day: {
+  DAY: {
     type: DataTypes.INTEGER,
   },
-  dayOfWeek: {
+  DAY_OF_WEEK: {
     type: DataTypes.INTEGER,
   },
-  airline: {
+  AIRLINE: {
     type: DataTypes.STRING,
   },
-  flightNumber: {
+  FLIGHT_NUMBER: {
     type: DataTypes.INTEGER,
   },
-  tailNumber: {
+  TAIL_NUMBER: {
     type: DataTypes.STRING,
   },
-  originAirport: {
+  ORIGIN_AIRPORT: {
     type: DataTypes.STRING,
   },
-  destinationAirport: {
+  DESTINATION_AIRPORT: {
     type: DataTypes.STRING,
   },
-  scheduledDeparture: {
+  SCHEDULED_DEPARTURE: {
     type: DataTypes.INTEGER,
   },
-  departureTime: {
+  DEPARTURE_TIME: {
     type: DataTypes.INTEGER,
   },
-  departureDelay: {
+  DEPARTURE_DELAY: {
     type: DataTypes.INTEGER,
   },
-  taxiOut: {
+  TAXI_OUT: {
     type: DataTypes.INTEGER,
   },
-  wheelsOff: {
+  WHEELS_OFF: {
     type: DataTypes.INTEGER,
   },
-  scheduledTime: {
+  SCHEDULED_TIME: {
     type: DataTypes.INTEGER,
   },
-  elapsedTime: {
+  ELAPSED_TIME: {
     type: DataTypes.INTEGER,
   },
-  airTime: {
+  AIR_TIME: {
     type: DataTypes.INTEGER,
   },
-  distance: {
+  DISTANCE: {
     type: DataTypes.INTEGER,
   },
-  wheelsOn: {
+  WHEELS_ON: {
     type: DataTypes.INTEGER,
   },
-  taxiIn: {
+  TAXI_IN: {
     type: DataTypes.INTEGER,
   },
-  scheduledArrival: {
+  SCHEDULED_ARRIVAL: {
     type: DataTypes.INTEGER,
   },
-  arrivalTime: {
+  ARRIVAL_TIME: {
     type: DataTypes.INTEGER,
   },
-  arrivalDelay: {
+  ARRIVAL_DELAY: {
     type: DataTypes.INTEGER,
   },
-  diverted: {
+  DIVERTED: {
     type: DataTypes.INTEGER,
   },
-  cancelled: {
+  CANCELLED: {
     type: DataTypes.INTEGER,
   },
-  cancellationReason: {
+  CANCELATION_REASON: {
     type: DataTypes.INTEGER,
   },
-  airSystemDelay: {
+  AIR_SYSTEM_DELAY: {
     type: DataTypes.INTEGER,
   },
-  securityDelay: {
+  SECURITY_DELAY: {
     type: DataTypes.INTEGER,
   },
-  airlineDelay: {
+  AIRLINE_DELAY: {
     type: DataTypes.INTEGER,
   },
-  lateAircraftDelay: {
+  LATE_AIRCRAFT_DELAY: {
     type: DataTypes.INTEGER,
   },
-  weatherDelay: {
+  WEATHER_DELAY: {
     type: DataTypes.INTEGER,
   },
 });

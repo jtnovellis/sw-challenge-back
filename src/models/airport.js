@@ -1,28 +1,28 @@
 const { DataTypes } = require('sequelize');
-const { sequelize } = require('../databse');
+const { sequelize } = require('../database');
 
 const Airport = sequelize.define('airport', {
-  iataCode: {
-    type: DataTypes.INTEGER,
+  IATA_CODE: {
+    type: DataTypes.STRING,
     primaryKey: true,
   },
-  airport: {
+  AIRPORT: {
     type: DataTypes.STRING,
   },
-  city: {
+  CITY: {
     type: DataTypes.STRING,
   },
-  state: {
+  STATE: {
     type: DataTypes.STRING,
   },
-  country: {
+  COUNTRY: {
     type: DataTypes.STRING,
   },
-  latitude: {
-    type: DataTypes.FLOAT,
+  LATITUDE: {
+    type: DataTypes.STRING,
   },
-  longitude: {
-    type: DataTypes.FLOAT,
+  LONGITUDE: {
+    type: DataTypes.STRING,
   },
 });
 
