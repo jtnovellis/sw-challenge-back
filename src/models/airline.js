@@ -2,11 +2,11 @@ const { DataTypes } = require('sequelize');
 const { sequelize } = require('../database');
 
 const Airline = sequelize.define('airlines', {
-  iataCode: {
+  IATA_CODE: {
     type: DataTypes.INTEGER,
     primaryKey: true,
   },
-  airline: {
+  AIRLINE: {
     type: DataTypes.STRING,
   },
 });
