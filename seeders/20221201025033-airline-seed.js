@@ -14,9 +14,9 @@ module.exports = {
 
     const fieldNames = header.split(',');
 
-    let airlines = [];
+    const airlines = [];
     for (let i = 0; i < dataLines.length; i++) {
-      let airline = {};
+      const airline = {};
       const data = dataLines[i].split(',');
       for (let j = 0; j < fieldNames.length; j++) {
         const fieldName = fieldNames[j];
@@ -24,11 +24,10 @@ module.exports = {
       }
       airlines.push(airline);
     }
-    console.log(airlines);
     await queryInterface.bulkInsert('airlines', airlines, {});
   },
 
   async down(queryInterface, Sequelize) {
-    await queryInterface.bulkDelete('People', null, {});
+    await queryInterface.bulkDelete('airlines', null, {});
   },
 };
